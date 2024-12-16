@@ -21,4 +21,5 @@ export default {
   font-family: Arial, sans-serif;
   padding: 20px;
 }
+
 </style>
