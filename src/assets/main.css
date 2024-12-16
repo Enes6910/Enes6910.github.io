@@ -1,10 +1,107 @@
+/* --- Styles de base --- */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #4facfe, #00f2fe);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 h1 {
-  color: #007BFF;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.app-container {
+  text-align: center;
+  padding: 20px;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* --- Champs d'entrée et boutons --- */
+.city-input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.city-input::placeholder {
+  color: #888;
+}
+
+.fetch-button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fetch-button:hover {
+  background-color: #0056b3;
+}
+
+/* --- Section météo --- */
+.weather-info {
+  margin-top: 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+.weather-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.weather-info p {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.weather-icon {
+  font-size: 4rem;
+  margin: 15px 0;
+  animation: bounce 2s infinite;
+}
+
+.error-message {
+  color: #f00;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }

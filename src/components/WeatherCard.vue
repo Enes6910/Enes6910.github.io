@@ -9,6 +9,7 @@
       <button @click="fetchWeather" class="fetch-button">Rechercher</button>
   
       <div v-if="weather" class="weather-info">
+        <i :class="weatherIcon" class="weather-icon"></i>
         <h2>{{ weather.name }}</h2>
         <p>{{ weather.weather[0].description }}</p>
         <p><strong>Température :</strong> {{ weather.main.temp }}°C</p>
@@ -26,6 +27,27 @@
         weather: null,
         error: null,
       };
+    },
+    computed: {
+      weatherIcon() {
+        if (!this.weather) return '';
+        const description = this.weather.weather[0].main.toLowerCase();
+  
+        // Associe les icônes météo en fonction de la description
+        const icons = {
+          clear: 'fas fa-sun',
+          clouds: 'fas fa-cloud',
+          rain: 'fas fa-cloud-showers-heavy',
+          drizzle: 'fas fa-cloud-rain',
+          thunderstorm: 'fas fa-bolt',
+          snow: 'fas fa-snowflake',
+          mist: 'fas fa-smog',
+          fog: 'fas fa-smog',
+        };
+  
+        // Retourne l'icône correspondante ou une icône par défaut
+        return icons[description] || 'fas fa-question';
+      },
     },
     methods: {
       async fetchWeather() {
@@ -51,38 +73,4 @@
     },
   };
   </script>
-  
-  <style scoped>
-  .weather-card {
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .city-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .fetch-button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .weather-info {
-    margin-top: 20px;
-  }
-  
-  .error-message {
-    color: red;
-    margin-top: 10px;
-  }
-  </style>
   
