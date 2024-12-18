@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <h1>Application Météo</h1>
+    <h1>Météo du Jour</h1>
     <WeatherCard />
   </div>
 </template>
