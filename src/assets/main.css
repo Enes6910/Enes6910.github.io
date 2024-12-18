@@ -17,25 +17,26 @@ body {
   width: 100%;
 }
 
+/* Nuages en arrière-plan */
 .clouds {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/nuage.jpg'); /* Remplace avec ton image de nuages */
-  background-repeat: repeat-x; /* Répète l'image horizontalement */
-  background-position: 0 0; /* Position de départ de l'image */
+  background-image: url('/nuage1.png'); /* Remplacez par vos images de petits nuages */
+  background-repeat: repeat-x;
+  background-position: 0 0, 50% 0; /* Position différente pour chaque type de nuage */
   animation: moveClouds 60s linear infinite; /* Animation des nuages */
 }
 
 /* Animation pour faire défiler l'image de nuages */
 @keyframes moveClouds {
   0% {
-    background-position: 0 0;
+    background-position: 0 0, 50% 0;
   }
   100% {
-    background-position: 100% 0; /* Déplace l'image vers la droite */
+    background-position: 100% 0, 150% 0; /* Déplace les nuages vers la droite avec une vitesse différente */
   }
 }
 
