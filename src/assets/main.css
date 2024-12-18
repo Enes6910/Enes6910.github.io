@@ -131,6 +131,76 @@ h1 {
   margin-top: 20px;
 }
 
+/* From Uiverse.io by vinodjangid07 */ 
+.cardContainer {
+  display: flex;
+  justify-content: center; /* Centre la carte horizontalement */
+}
+
+.card {
+  background-color: #0a030e65; /* Couleur de fond */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre */
+  padding: 20px; /* Espacement intérieur */
+  width: 300px; /* Largeur fixe de la carte */
+  text-align: center; /* Centre tout le texte dans la carte */
+}
+.city {
+  font-weight: 700;
+  font-size: 0.9em;
+  letter-spacing: 1.2px;
+  color: white;
+}
+
+.weather {
+  font-weight: 500;
+  font-size: 0.7em;
+  letter-spacing: 1.2px;
+  color: rgb(197, 197, 197);
+}
+
+.temp {
+  font-size: 1.8em;
+  color: white;
+}
+
+.minmaxContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.min,
+.max {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0px 20px;
+  gap: 4px;
+}
+
+.max {
+  align-items: flex-start;
+  border-left: 2px solid white;
+}
+
+.maxHeading,
+.minHeading {
+  font-size: 0.7em;
+  font-weight: 600;
+  color: white;
+}
+
+.maxTemp,
+.minTemp {
+  font-size: 0.6em;
+  font-weight: 500;
+  color: rgb(197, 197, 197);
+}
+
 /* --- Animations --- */
 @keyframes fadeIn {
   from {
